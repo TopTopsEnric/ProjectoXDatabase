@@ -83,10 +83,11 @@ async function deleteUser(req, res) {
 // ✅ **POST - Login** (Verificar usuario y generar tokens)
 async function login(req, res) {
   const { email, password } = req.body;
+  const emailTrimmed = email.trim();
 
   try {
     // Verificar si el usuario existe en la base de datos
-    const result = await pool.query("SELECT * FROM \"User\" WHERE  \"Email\" = $1", [email]);
+    const result = await pool.query("SELECT * FROM \"User\" WHERE  \"Email\" = $1", [emailTrimmed]);
 
     if (result.rows.length === 0) {
       return res.status(401).json({ error: "Usuario no encontrado" });
