@@ -10,10 +10,17 @@ const { body, param, validationResult } = require("express-validator");
 const routes = require('./routes');
 
 const app = express();
+app.use('/api', router); 
 app.use((req, res, next) => {
   console.log('Request Path:', req.path);
   console.log('Request Method:', req.method);
   next();
+});
+app.use((req, res) => {
+  res.status(404).json({ 
+    error: 'Ruta no encontrada',
+    path: req.url 
+  });
 });
 
 app.use(express.json());
@@ -38,7 +45,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Rutas
-app.use("/", routes);
+
 
 
 module.exports = app;
