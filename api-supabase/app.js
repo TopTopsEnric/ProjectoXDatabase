@@ -25,7 +25,6 @@ app.use((req, res) => {
 
 
 app.use(helmet());
-const routes = require('./routes');
 const corsOptions = {
   origin: "*", // Permite cualquier origen
   methods: "GET,POST,PUT,DELETE",
