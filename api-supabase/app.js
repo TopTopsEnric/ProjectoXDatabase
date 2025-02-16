@@ -9,9 +9,15 @@ const bcrypt = require("bcrypt");
 const { body, param, validationResult } = require("express-validator");
 
 const app = express();
+app.use((req, res, next) => {
+  console.log('Request Path:', req.path);
+  console.log('Request Method:', req.method);
+  next();
+});
+
 app.use(express.json());
 app.use(helmet());
-
+const routes = require('./routes');
 const corsOptions = {
   origin: "*", // Permite cualquier origen
   methods: "GET,POST,PUT,DELETE",
@@ -32,5 +38,6 @@ app.use(limiter);
 
 // Rutas
 app.use("/", routes);
+
 
 module.exports = app;
