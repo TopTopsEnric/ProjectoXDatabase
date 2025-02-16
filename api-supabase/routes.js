@@ -7,8 +7,8 @@ const {
   deleteUser,
   login,
   refreshToken,
-} = require("./controllers");
-const { verificarToken } = require("../auth/auth");
+} = require("./controllador");
+const { verificarToken } = require("./auth/auth");
 
 const router = express.Router();
 
