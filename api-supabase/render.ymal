@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: mi-api
+    runtime: node
+    repo: https://github.com/TopTopsEnric/ProjectoXDatabase.git
+    branch: main
+    region: Spain
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: REFRESH_SECRET
+        sync: false
