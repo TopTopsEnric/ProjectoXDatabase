@@ -86,7 +86,7 @@ async function login(req, res) {
 
   try {
     // Verificar si el usuario existe en la base de datos
-    const result = await pool.query("SELECT * FROM \"User\" WHERE email = $1", [email]);
+    const result = await pool.query("SELECT * FROM \"User\" WHERE  \"Email\" = $1", [email]);
 
     if (result.rows.length === 0) {
       return res.status(401).json({ error: "Usuario no encontrado" });
