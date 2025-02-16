@@ -10,6 +10,7 @@ const { body, param, validationResult } = require("express-validator");
 const routes = require('./routes');
 
 const app = express();
+app.use(express.json());
 app.use('/api', router); 
 app.use((req, res, next) => {
   console.log('Request Path:', req.path);
@@ -22,8 +23,8 @@ app.use((req, res) => {
     path: req.url 
   });
 });
+app.use('/api', router); 
 
-app.use(express.json());
 app.use(helmet());
 const routes = require('./routes');
 const corsOptions = {
