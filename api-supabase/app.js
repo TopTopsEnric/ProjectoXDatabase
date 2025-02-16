@@ -7,6 +7,7 @@ const rateLimit = require("express-rate-limit");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { body, param, validationResult } = require("express-validator");
+const routes = require('./routes');
 
 const app = express();
 app.use((req, res, next) => {
