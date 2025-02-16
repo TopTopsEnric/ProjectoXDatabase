@@ -46,6 +46,9 @@ app.use(limiter);
 
 // Rutas
 
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
+});
 
 
 module.exports = app;
