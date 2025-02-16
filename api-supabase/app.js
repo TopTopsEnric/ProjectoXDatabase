@@ -9,6 +9,7 @@ const bcrypt = require("bcrypt");
 const { body, param, validationResult } = require("express-validator");
 const routes = require('./routes');
 const app = express();
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use('/api', routes); 
 app.use((req, res, next) => {
