@@ -83,7 +83,7 @@ async function deleteUser(req, res) {
 // ✅ **POST - Login** (Verificar usuario y generar tokens)
 async function login(req, res) {
   const { email, password } = req.body;
-  console.log("Email recibido:", email);
+  console.log("Datos recibidos:", req.body);
   const emailTrimmed = email.trim();
 
   try {
