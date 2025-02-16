@@ -11,7 +11,7 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
-app.use('/api', routes); 
+app.use('/', routes); 
 app.use((req, res, next) => {
   console.log('Request Path:', req.path);
   console.log('Request Method:', req.method);
