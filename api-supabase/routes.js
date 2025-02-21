@@ -7,6 +7,7 @@ const {
   deleteUser,
   login,
   refreshToken,
+  getDates,
 } = require("./controllador");
 const { verificarToken } = require("./auth/auth");
 
@@ -22,6 +23,13 @@ router.get(
   "/users",
   verificarToken,
   getUsers
+);
+
+// ✅ GET - Obtener datos (Protegido)
+router.get(
+  "/dates",
+  verificarToken,
+  getDates
 );
 
 // ✅ POST - Crear un usuario (Validación de datos)
