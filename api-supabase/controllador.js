@@ -28,7 +28,7 @@ async function createUser(req, res) {
     return res.status(400).json({ errores: errores.array() });
   }
 
-  const { Name, Email, phone, nickname, password } = req.body;
+  const { name, email, phone, nickname, password } = req.body;
   console.log("Valores:", Name, Email, phone, nickname, password);
 
   try {
