@@ -37,7 +37,7 @@ router.post(
   "/crear-usuario",
   [
     body("Name").isString().notEmpty(),
-    body("Email").isEmail().notEmpty(),
+    body("email").isEmail().notEmpty(),
     body("phone").isString().notEmpty(),       
     body("nickname").isString().notEmpty(),
     body("password").isString().notEmpty(),
