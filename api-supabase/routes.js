@@ -47,9 +47,8 @@ router.post(
 
 // ✅ PUT - Actualizar un usuario (Validación de ID y datos, protegido)
 router.put(
-  "/actualizar-usuario/:id",
+  "/actualizar-usuario",
   [
-    param("id").isInt(),
     body("Name").optional().isString(),
     body("Email").optional().isEmail(),
     body("phone").optional().isMobilePhone(),
