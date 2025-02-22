@@ -55,12 +55,12 @@ async function updateUser(req, res) {
   }
 
   const userId = req.user.id; // Obtenemos el ID del token
-  const { Name, Email, phone, nickname } = req.body;
+  const { name, email, phone, nickname } = req.body;
 
   try {
     const result = await pool.query(
       'UPDATE "User" SET "Name" = COALESCE($1, "Name"), "Email" = COALESCE($2, "Email"), "Phone" = COALESCE($3, "Phone"), "NickName" = COALESCE($4, "NickName") WHERE id_user = $5',
-      [Name, Email, phone, nickname, userId]
+      [name, email, phone, nickname, userId]
     );
 
     if (result.rowCount === 0) {

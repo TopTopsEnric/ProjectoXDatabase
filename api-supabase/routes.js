@@ -49,8 +49,8 @@ router.post(
 router.put(
   "/actualizar-usuario",
   [
-    body("Name").optional().isString(),
-    body("Email").optional().isEmail(),
+    body("name").optional().isString(),
+    body("email").optional().isEmail(),
     body("phone").optional().isMobilePhone(),
     body("nickname").optional().isString(),
   ],
