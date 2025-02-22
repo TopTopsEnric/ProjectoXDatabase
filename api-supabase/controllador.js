@@ -176,7 +176,7 @@ async function getDates(req, res) {
   const userId = req.user.id; // Obtenemos el ID del token
   
   try {
-    const result = await pool.query('SELECT * FROM "Statics" WHERE user_id = $1;', [userId]);
+    const result = await pool.query('SELECT * FROM "Statics" WHERE id_user = $1;', [userId]);
     res.json(result.rows);
   } catch (error) {
     console.error(error);
