@@ -68,7 +68,7 @@ router.delete(
 );
 
 router.post(
-  "/crear-partida",
+  "/play",
   [
     body("soldier_used").isInt().notEmpty(),
     body("shoot_made").isInt().notEmpty(),
