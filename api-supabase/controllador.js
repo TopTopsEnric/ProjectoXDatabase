@@ -29,13 +29,14 @@ async function createUser(req, res) {
   }
 
   const { Name, Email, phone, nickname, password } = req.body;
+  console.log("Valores:", Name, Email, phone, nickname, password);
 
   try {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     await pool.query(
-      'INSERT INTO "User" ("Name", "Email", "Phone", "NickName", "password") VALUES ($1, $2, $3, $4, $5)',
+      'INSERT INTO "User" ("Name", "Email", "Phone", "NickName", password) VALUES ($1, $2, $3, $4, $5)',
       [Name, Email, phone, nickname, hashedPassword]
     );
 
