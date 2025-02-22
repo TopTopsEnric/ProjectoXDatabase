@@ -73,7 +73,7 @@ router.post(
     body("soldier_used").isInt().notEmpty(),
     body("shoot_made").isInt().notEmpty(),
     body("ship_sinked").isInt().notEmpty(),
-    body("time_left").isfloat().notEmpty(),
+    body("time_left").isFloat().notEmpty(),
     body("points").isInt().notEmpty(),
     body("win").isBoolean().notEmpty(),
   ],
