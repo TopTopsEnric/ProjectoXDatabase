@@ -38,7 +38,7 @@ router.post(
   [
     body("Name").isString().notEmpty(),
     body("Email").isEmail().notEmpty(),
-    body("phone").isMobilePhone(),       // Asegúrate de que la key coincide con la que espera el controlador
+    body("phone").isString().notEmpty(),       
     body("nickname").isString().notEmpty(),
     body("password").isString().notEmpty(),
   ],
