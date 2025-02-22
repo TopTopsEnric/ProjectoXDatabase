@@ -8,6 +8,7 @@ const {
   login,
   refreshToken,
   getDates,
+  createPlay,
 } = require("./controllador");
 const { verificarToken } = require("./auth/auth");
 
@@ -64,6 +65,20 @@ router.delete(
   [param("id").isInt()],
   verificarToken,
   deleteUser
+);
+
+router.post(
+  "/crear-partida",
+  [
+    body("soldier_used").isInt().notEmpty(),
+    body("shoot_made").isInt().notEmpty(),
+    body("ship_sinked").isInt().notEmpty(),
+    body("time_left").isfloat().notEmpty(),
+    body("points").isInt().notEmpty(),
+    body("win").isBoolean().notEmpty(),
+  ],
+  verificarToken,
+  createPlay
 );
 
 // POST - Login (Autenticación, sin token requerido)

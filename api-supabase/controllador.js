@@ -196,7 +196,7 @@ async function createPlay(req, res) {
 
   try {
     await pool.query(
-      'INSERT INTO "Play" (id_user, soldier_used, shoot_made, ship_sinked, time_left, points, win) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+      'INSERT INTO "Play" (soldier_used, shoot_made, ship_sinked, points,time_left ,win, id_user) VALUES ($2, $3, $4, $5, $6,$7,$1)',
       [userId, soldier_used, shoot_made, ship_sinked, time_left, points, win]
     );
 
