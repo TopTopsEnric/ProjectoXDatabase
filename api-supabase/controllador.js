@@ -29,7 +29,7 @@ async function createUser(req, res) {
   }
 
   const { name, email, phone, nickname, password } = req.body;
-  console.log("Valores:", Name, Email, phone, nickname, password);
+  console.log("Valores:", name, email, phone, nickname, password);
 
   try {
     const saltRounds = 10;
@@ -37,7 +37,7 @@ async function createUser(req, res) {
 
     await pool.query(
       'INSERT INTO "User" ("Name", "Email", "Phone", "NickName", password) VALUES ($1, $2, $3, $4, $5)',
-      [Name, Email, phone, nickname, hashedPassword]
+      [name, email, phone, nickname, hashedPassword]
     );
 
     res.status(201).json({ message: "Usuario creado exitosamente" });
