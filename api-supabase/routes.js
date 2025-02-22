@@ -51,7 +51,7 @@ router.put(
   [
     body("name").optional().isString(),
     body("email").optional().isEmail(),
-    body("phone").optional().isMobilePhone(),
+    body("phone").optional().isString(),
     body("nickname").optional().isString(),
   ],
   verificarToken,
